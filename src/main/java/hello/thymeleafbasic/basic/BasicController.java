@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -88,14 +89,26 @@ public class BasicController {
         return "basic/attribute";
     }
 
+    @GetMapping("/each")
+    public String each(Model model) {
+        addUser(model);
+        return "basic/each";
+    }
 
+    private void addUser(Model model) {
+        List<User> list = new ArrayList<>();
+        list.add(new User("UserA", 10));
+        list.add(new User("UserB", 20));
+        list.add(new User("UserC", 30));
 
+        model.addAttribute("users", list);
+    }
 
-
-
-
-
-
+    @GetMapping("/condition")
+    public String condition(Model model) {
+        addUser(model);
+        return "basic/condition";
+    }
 
 
 
