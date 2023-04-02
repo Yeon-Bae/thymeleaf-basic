@@ -83,33 +83,18 @@ public class BasicController {
         return "basic/operation";
     }
 
-
-
-
-
-
-
-
-
-
-    @Component("helloBean")
-    static class HelloBean {
-        public String hello(String data) {
-            return "hello " + data;
-        }
+    @GetMapping("/attribute")
+    public String attribute() {
+        return "basic/attribute";
     }
 
 
-    @Data
-    static class User {
-        private String username;
-        private int age;
 
-        public User(String username, int age) {
-            this.username = username;
-            this.age = age;
-        }
-    }
+
+
+
+
+
 
 
 
